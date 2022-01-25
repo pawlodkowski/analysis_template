@@ -6,7 +6,7 @@ notes and replace it with the appropriate documentation. See previous analyses /
 ## Usage:
     
 ```bash
-git clone --depth=1 --branch=main https://github.com/pawlodkowski/analysis_template.git && \ 
+git clone --depth=1 --branch=main git@github.com:pawlodkowski/analysis_template.git && \
 rm -rf ./analysis_template/.git
 ```
 
