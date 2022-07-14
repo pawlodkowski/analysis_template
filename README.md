@@ -28,11 +28,11 @@ docker build -t ipython .
 2. Run the Docker container
 
 ```bash
-docker run -it --rm -v $PWD:/usr/src/myapp -v $HOME/.rport:/root ipython
+make report
 ```
 
 If everything worked out, the Docker container will have generated 2 files:
-- an executed version of the notebook (`ex.ipynb`)
+- an executed version of the notebook, overwriting the original file (`analysis.ipynb`)
 - a custom-formatted, HTML report (`report.html`)
 
 3. View results
@@ -40,5 +40,40 @@ If everything worked out, the Docker container will have generated 2 files:
 ```
 open report.html
 ```
+    
+### How to Run Notebook Interactively
+
+Rather than running all the code at once, you may be more interested in running the code in the notebook 
+interactively, step-by-step (_e.g. if you want to explore the code yourself and get a better idea of 
+what's going on "under the hood"_). In this case, it is advised to run the notebook locally rather than through Docker.
+
+1. Make sure you have the dependencies installed
+
+```bash
+pip install -r requirements.txt
+```
+
+_alternatively, if you're using conda_:
+
+```bash
+conda install --file requirements.txt
+```
+
+2. Make sure you have Jupyter Lab* installed
+
+Refer to the documentation for installation (https://jupyterlab.readthedocs.io/en/stable/getting_started/installation.html#installation), e.g. 
+either through `pip` or `conda`.
+
+*_You could also use Jupyter Notebook, but I personally prefer Jupyter Lab._
+
+3. Launch Jupyter Lab
+
+```bash
+jupyter lab
+```
+
+4. Navigate to the notebook and run cells
+
+The file is `analysis.ipynb`.
 
 
